@@ -1,0 +1,28 @@
+import pandas as pd  # Importing Pandas for data handling
+
+# Load the dataset
+data = pd.read_csv('Diabetes.csv')
+
+# Separate features (X) and target variable (y)
+x = data.drop('diabetes', axis=1)  # Dropping the target column
+y = data['diabetes']  # Storing the target column
+
+from sklearn.model_selection import train_test_split
+
+# Split the dataset into training (20%) and testing (80%) sets
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.80, random_state=10)
+
+from sklearn.naive_bayes import GaussianNB
+
+# Initialize and train the Naïve Bayes model
+gn = GaussianNB()
+gn.fit(x_train, y_train)
+
+# Make predictions on the test set
+y_pred = gn.predict(x_test)
+
+from sklearn.metrics import accuracy_score
+
+# Calculate and print the accuracy of the model
+ac = accuracy_score(y_test, y_pred)
+print(f"Model Accuracy: {ac * 100:.2f}%")
