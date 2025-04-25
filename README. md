@@ -1,5 +1,7 @@
 
 
+---
+
 # 🧪 Diabetes Prediction Using Naïve Bayes Classifier
 
 This project demonstrates how to build a **Naïve Bayes classification model** to predict whether a person has diabetes based on medical features. The dataset used is `Diabetes.csv`.
@@ -80,3 +82,10 @@ model.fit(x_train, y_train)
 accuracy = accuracy_score(y_test, model.predict(x_test))
 ```
 
+---
+
+## 📬 Contact
+
+For any suggestions or questions, feel free to open an issue or reach out.
+
+---
